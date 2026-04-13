@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <div class="navbar__logo">
+    <a href="/"><img src="img/logo.png" alt="Logo" /></a>
+  </div>
+  <div class="navbar__items-wrapper">
+    @for (section of sections; track section.title) {
+      <app-navbar-item-desktop [section]="section"></app-navbar-item-desktop>
+    }
+  </div>
+  <div class="navbar__languages-wrapper">
+    <app-navbar-item-desktop [section]="languages"></app-navbar-item-desktop>
+  </div>
+</nav>

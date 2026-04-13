@@ -1,0 +1,19 @@
+<button
+  class="navbar-item"
+  [class.hovered]="isHovered"
+  (mouseenter)="isHovered = true"
+  (mouseleave)="isHovered = false"
+>
+  {{ section().title }}
+</button>
+@if (section().items && section().items!.length > 0 && isHovered) {
+  <div
+    class="navbar-item__dropdown"
+    (mouseenter)="isHovered = true"
+    (mouseleave)="isHovered = false"
+  >
+    @for (item of section().items; track item.title) {
+      <a class="navbar-item__dropdown-item" href="{{ item.url }}">{{ item.title }}</a>
+    }
+  </div>
+}
