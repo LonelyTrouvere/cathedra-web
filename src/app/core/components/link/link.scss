@@ -1,0 +1,11 @@
+.arrow-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+
+  &__text {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+  }
+}
