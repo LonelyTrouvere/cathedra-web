@@ -1,0 +1,96 @@
+<div class="home-page">
+  <section class="home-page__main">
+    <div class="home-page__main__headers">
+      <h4>Київський національний університет імені Тараса Шевченка</h4>
+      <h1 class="header">
+        Кафедра інтелектуальних <br />
+        програмних систем
+      </h1>
+      <h3>Факультет комп’ютерних наук та кібернетики</h3>
+    </div>
+    <div class="home-page__main__more">
+      <button class="call-to-action-button" (click)="router.navigate(['/about'])">
+        Дізнатись більше
+      </button>
+      <img src="img/logo-large.png" alt="logo" />
+    </div>
+  </section>
+  <section class="home-page__about">
+    <div class="home-page__about__text">
+      <h2 class="header">Про нас</h2>
+      <p>
+        Кафедра інтелектуальних програмних систем спеціалізується в області комп'ютерних наук,
+        штучного інтелекту та програмної інженерії.
+      </p>
+      <p>
+        Співробітники кафедри активно ведуть дослідження в цих галузях і активно залучають до цього
+        студентів.
+      </p>
+      <app-link text="Дізнатися більше про кафедру" url="/about"></app-link>
+    </div>
+    <img src="img/faculty.png" alt="faculty" />
+  </section>
+  <section class="home-page__programs">
+    <h2 class="header">Наші програми</h2>
+    <app-divider></app-divider>
+    <div class="home-page__programs__program">
+      <div class="home-page__programs__program__name">
+        <h3 class="header">ОС Бакалавр</h3>
+        <p class="semi-header">Освітня програма “Програмна інженерія”</p>
+      </div>
+      <div class="home-page__programs__program__description">
+        <p>
+          Кафедра інтелектуальних програмних систем здійснює підготовку бакалаврів в галузі знань 12
+          Інформаційні технології за спеціальністю 121 Інженерія програмного забезпечення в рамках
+          освітньої програми Програмна інженерія.
+        </p>
+        <app-link text="Детальніше" url="/programs"></app-link>
+      </div>
+    </div>
+    <app-divider></app-divider>
+    <div class="home-page__programs__program">
+      <div class="home-page__programs__program__name">
+        <h3 class="header">ОС Магістр</h3>
+        <p class="semi-header">Освітня програма “Програмне забезпечення систем”</p>
+      </div>
+      <div class="home-page__programs__program__description">
+        <p>
+          Кафедра інтелектуальних програмних систем здійснює підготовку магістрів в галузі знань 12
+          Інформаційні технології за спеціальністю 121 Інженерія програмного забезпечення в рамках
+          освітньої програми Програмне забезпечення систем.
+        </p>
+        <app-link text="Детальніше" url="/programs"></app-link>
+      </div>
+    </div>
+    <app-divider></app-divider>
+  </section>
+  <section class="home-page__links">
+    <h3 class="header">Корисні посилання</h3>
+    <div class="home-page__links__wrapper">
+      <div class="home-page__links__list">
+        <app-link
+          text="Науковий семінар “Інтелектуальні інформаційні системи”"
+          url="https://iss.csc.knu.ua/uk/research/scientific-seminar.html"
+        ></app-link>
+        <app-link
+          text="Науково-пошукові системи"
+          url="https://iss.csc.knu.ua/uk/library/scientific-search-systems.html"
+        ></app-link>
+        <app-link
+          text="Наукові бібліотеки"
+          url="https://iss.csc.knu.ua/uk/library/scientific-libraries.html"
+        ></app-link>
+      </div>
+      <div class="home-page__links__list">
+        <app-link
+          text="Наукові конференції"
+          url="https://iss.csc.knu.ua/uk/research/scientific-conferences.html"
+        ></app-link>
+        <app-link
+          text="Самоосвіта"
+          url="https://iss.csc.knu.ua/uk/library/self-education.html"
+        ></app-link>
+      </div>
+    </div>
+  </section>
+</div>

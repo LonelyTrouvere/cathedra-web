@@ -1,10 +1,17 @@
 .navbar {
-  width: 100%;
+  width: calc(100% - var(--app-padding) * 2);
   height: 100px;
-  display: flex;
-  justify-content: space-around;
-  background: #F9F9F9;
+  background: #f9f9f9;
+  padding-left: var(--app-padding);
+  padding-right: var(--app-padding);
   box-shadow: 0 4px 77px -26px rgba(0, 0, 0, 0.25);
+  margin-bottom: 34px;
+
+  &__wrapper {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+  }
 
   &__items-wrapper {
     display: flex;

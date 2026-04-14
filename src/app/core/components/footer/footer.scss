@@ -1,11 +1,19 @@
 .footer {
-  margin-top: 100px;
-  width: 100%;
+  width: calc(100% - var(--app-padding) * 2);
+  padding-left: var(--app-padding);
+  padding-right: var(--app-padding);
   height: 160px;
   display: flex;
-  justify-content: space-around;
   background: #f9f9f9;
   box-shadow: 0 4px 77px -26px rgba(0, 0, 0, 0.25);
+  margin-top: 34px;
+
+  &__wrapper {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: space-between;
+  }
 
   &__logo,
   &__socials,
@@ -31,9 +39,10 @@
     flex-direction: column;
     gap: 4px;
 
-    &__text {
-      font-weight: bold;
-      font-size: 16px;
+    app-link {
+      .arrow-link__text {
+        font-size: 16px;
+      }
     }
   }
 }

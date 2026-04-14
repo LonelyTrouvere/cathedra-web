@@ -1,6 +1,18 @@
 body {
   font-family: 'Inter', sans-serif;
   margin: unset;
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin: unset;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+:root{
+  --app-padding: 64px;
 }
 
 .small-text {
@@ -19,4 +31,25 @@ body {
   font-size: 500;
   font-size: 26px;
   color: #606B70;
+}
+
+.header {
+  margin: unset;
+  padding: unset;
+  font-size: 700;
+  font-size: 52px;
+}
+
+.call-to-action-button {
+  border: none;
+  background: linear-gradient(90deg, #5B9FD9 0%, #4794D7 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 50px -17px #237BC6;
+  border-radius: 12px;
+  transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+
+  &:hover {
+    background: linear-gradient(90deg, #4F92CE 0%, #3D84C9 100%);
+    box-shadow: 0 14px 72px -10px #1F6EA8;
+  }
 }
