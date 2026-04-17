@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomePage } from './home-page/home-page';
 import { AboutPage } from './about-page/about-page';
-import { GreetingPage } from './greeting-page/greeting-page';
 import { WrongRoutePage } from './wrong-route-page/wrong-route-page';
+import { ServerErrorPage } from './server-error-page/server-error-page';
 
 export const routes: Routes = [
   {
@@ -16,9 +16,9 @@ export const routes: Routes = [
     title: 'ISC | About',
   },
   {
-    path: 'greeting',
-    component: GreetingPage,
-    title: 'ISC | Greeting',
+    path: 'server-error',
+    component: ServerErrorPage,
+    title: 'ISC | 500',
   },
   {
     path: '**',
