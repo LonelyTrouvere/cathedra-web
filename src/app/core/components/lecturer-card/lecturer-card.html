@@ -1,0 +1,9 @@
+<div class="lecturer-card">
+  <img
+    [src]="`${env.apiUrl}/${lecturer().photoUrl}`"
+    alt="{{ lecturer().getFullName() }}"
+    class="lecturer-card__img"
+  />
+  <p class="lecturer-card__name">{{ lecturer().getFullName() }}</p>
+  <p class="lecturer-card__titles">{{ lecturer().titles?.join(', ') }}</p>
+</div>

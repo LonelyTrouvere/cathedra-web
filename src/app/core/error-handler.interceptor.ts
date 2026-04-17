@@ -8,6 +8,7 @@ export const errorHandlerInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(req).pipe(
     catchError((err: HttpErrorResponse) => {
+      console.error('HTTP Error:', err);
       if (err.status >= 500) {
         router.navigate(['/server-error'], { replaceUrl: true });
       }

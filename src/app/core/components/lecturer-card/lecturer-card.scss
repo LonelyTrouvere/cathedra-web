@@ -1,0 +1,21 @@
+.lecturer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__img {
+    max-width: 170px;
+    max-height: 260px;
+    border-radius: 12px;
+  }
+
+  &__name {
+    font-size: 32px;
+    font-weight: 500;
+  }
+
+  &__titles {
+    font-size: 24px;
+    font-weight: 300;
+  }
+}
