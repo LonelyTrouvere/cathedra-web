@@ -1,0 +1,113 @@
+<div class="lecturare-page">
+  <h2 class="lecturare-page__header header">Співробітники кафедри</h2>
+  <div class="lecturare-page__content">
+    <section class="lecturare-page__top-section">
+      <img
+        class="lecturare-page__top-section__photo"
+        [src]="`${env.apiUrl}/${lecturer.photoUrl}`"
+        alt="Фото {{ lecturer.name }}"
+      />
+      <div class="lecturare-page__top-section__info">
+        <h3 class="lecturare-page__top-section__name">{{ lecturer.getFullName() }}</h3>
+        @if (titles) {
+          <p class="lecturare-page__top-section__titles">{{ titles }}</p>
+        }
+        @if (lecturer.urls) {
+          <p class="lecturare-page__top-section__urls">
+            Посилання:
+            @for (url of lecturer.urls; track url.url; let i = $index) {
+              <a class="lecturare-page__top-section__url" [href]="url.url" target="_blank">{{
+                url.name
+              }}</a>
+              @if (i < lecturer.urls.length - 1) {
+                <span>, </span>
+              } @else {
+                <span>.</span>
+              }
+            }
+          </p>
+        }
+      </div>
+    </section>
+    @if (lecturer.personalHistory?.length) {
+      <section class="lecturare-page__section">
+        <h3 class="lecturare-page__section__header">Освіта та кар’єра:</h3>
+        @if (lecturer.personalHistory!.length > 3) {
+          <div class="lecturare-page__section__list">
+            @for (history of personalHistory; track history) {
+              <span>{{ history }}</span>
+            }
+          </div>
+          <app-link
+            [text]="historyExtended ? 'Згорнути' : 'Читати далі'"
+            (click)="historyExtended = !historyExtended"
+          ></app-link>
+        } @else {
+          <div class="lecturare-page__section__list">
+            @for (history of lecturer.personalHistory; track history) {
+              <span>{{ history }}</span>
+            }
+          </div>
+        }
+      </section>
+    }
+    @if (lecturer.subjects?.length) {
+      <section class="lecturare-page__section">
+        <h3 class="lecturare-page__section__header">Сфера наукових інтересів:</h3>
+        <ul class="lecturare-page__section__list">
+          @for (subject of lecturer.subjects; track subject) {
+            <li>{{ subject }}</li>
+          }
+        </ul>
+      </section>
+    }
+    @if (lecturer.publications?.length) {
+      <section class="lecturare-page__section">
+        <h3 class="lecturare-page__section__header">Вибрані публікації:</h3>
+        @if (lecturer.publications!.length > 3) {
+          <ol class="lecturare-page__section__list">
+            @for (publication of publications; track publication) {
+              <li>{{ publication }}</li>
+            }
+          </ol>
+          <app-link
+            [text]="publicationExtended ? 'Згорнути' : 'Читати далі'"
+            (click)="publicationExtended = !publicationExtended"
+          ></app-link>
+        } @else {
+          <ol class="lecturare-page__section__list">
+            @for (publication of lecturer.publications; track publication) {
+              <li>{{ publication }}</li>
+            }
+          </ol>
+        }
+      </section>
+    }
+    @if (lecturer.courses?.length) {
+      <section class="lecturare-page__section">
+        <h3 class="lecturare-page__section__header">Викладацька діяльність:</h3>
+        <ol class="lecturare-page__section__list">
+          @for (course of lecturer.courses; track course) {
+            @if (course.includes('—')) {
+              <li>
+                <b>{{ course.split('—')[0] }}</b> — {{ course.split('—')[1] }}
+              </li>
+            } @else {
+              <li>{{ course }}</li>
+            }
+          }
+        </ol>
+      </section>
+    }
+    @if (lecturer.thesisSupervisions?.length) {
+      <section class="lecturare-page__section">
+        <h3 class="lecturare-page__section__header">Теми курсових та дипломних робіт:</h3>
+        <ol class="lecturare-page__section__list">
+          @for (thesis of lecturer.thesisSupervisions; track thesis) {
+            <li>{{ thesis }}</li>
+          }
+        </ol>
+      </section>
+    }
+  </div>
+</div>

@@ -4,7 +4,8 @@ import { AboutPage } from './about-page/about-page';
 import { WrongRoutePage } from './wrong-route-page/wrong-route-page';
 import { ServerErrorPage } from './server-error-page/server-error-page';
 import { LecturersListPage } from './lecturers-list-page/lecturers-list-page';
-import { lecturersResolver } from './core/resolvers/lecturers.resolver';
+import { lecturerResolver, lecturersResolver } from './core/resolvers/lecturers.resolver';
+import { LecturarePage } from './lecturare-page/lecturare-page';
 
 export const routes: Routes = [
   {
@@ -23,6 +24,14 @@ export const routes: Routes = [
     title: 'ISC | Lecturers',
     resolve: {
       lecturers: lecturersResolver,
+    },
+  },
+  {
+    path: 'lecturers/:slug',
+    component: LecturarePage,
+    title: 'ISC | Lecturers',
+    resolve: {
+      lecturer: lecturerResolver,
     },
   },
   {

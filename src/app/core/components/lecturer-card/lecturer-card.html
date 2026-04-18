@@ -1,4 +1,8 @@
-<div class="lecturer-card">
+<div
+  class="lecturer-card"
+  [ngClass]="{ 'lecturer-card--clickable': redirectUrl() }"
+  (click)="redirectUrl() && router.navigate(['/lecturers', lecturer().slug])"
+>
   <img
     [src]="`${env.apiUrl}/${lecturer().photoUrl}`"
     alt="{{ lecturer().getFullName() }}"

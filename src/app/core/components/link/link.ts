@@ -1,4 +1,5 @@
 import { Component, input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-link',
@@ -8,5 +9,19 @@ import { Component, input } from '@angular/core';
 })
 export class Link {
   text = input.required<string>();
-  url = input.required<string>();
+  url = input<string>();
+  clickable = input<CallableFunction>();
+
+  constructor(protected router: Router) {}
+
+  click() {
+    if (this.clickable()) {
+      this.clickable()!();
+      return;
+    }
+
+    if (this.url()) {
+      this.router.navigateByUrl(this.url()!);
+    }
+  }
 }

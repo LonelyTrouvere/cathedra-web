@@ -14,4 +14,8 @@ export class LecturersService {
       .get<Lecturer[]>('/lecturers')
       .pipe(map((lecturers) => lecturers.map((lec) => new Lecturer(lec))));
   }
+
+  getLecturerBySlug(slug: string): Observable<Lecturer> {
+    return this.http.get<Lecturer>(`/lecturers/${slug}`).pipe(map((lec) => new Lecturer(lec)));
+  }
 }

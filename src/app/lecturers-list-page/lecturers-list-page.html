@@ -9,7 +9,7 @@
         </div>
         <div class="lecturers-list__block__content">
           @for (item of lecturer.value; track item.slug) {
-            <app-lecturer-card [lecturer]="item"></app-lecturer-card>
+            <app-lecturer-card [lecturer]="item" [redirectUrl]="true"></app-lecturer-card>
           }
         </div>
       </div>
