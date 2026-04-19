@@ -1,0 +1,26 @@
+.searchbar {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+
+  &:focus-within {
+    border-color: #12a1dd;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    font-size: 16px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #999;
+      font-size: 16px;
+    }
+  }
+}

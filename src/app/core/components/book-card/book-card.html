@@ -1,0 +1,19 @@
+<div class="book">
+  <img
+    [src]="`${env.apiUrl}/${book().photoUrl}`"
+    alt="Обкладинка книги {{ book().title }}"
+    class="book__cover-image"
+  />
+  <div class="book__header">
+    <h3 class="book__header__title">{{ book().title }}</h3>
+    <p class="book__header__author">{{ book().authors.join(', ') }}</p>
+  </div>
+  <div class="book__details">
+    <p class="book__details__publisher">
+      <span class="bold">Видавництво:</span> {{ book().publisher }}. – {{ book().year }}
+    </p>
+    <p class="book__details__pages"><span class="bold">Обсяг:</span> {{ book().pages }}</p>
+    <p class="book__details__language"><span class="bold">Мова:</span> {{ book().language }}</p>
+    <p class="book__details__isbn"><span class="bold">ISBN:</span> {{ book().isbn }}</p>
+  </div>
+</div>

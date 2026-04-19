@@ -1,0 +1,35 @@
+.book {
+  &__cover-image {
+    max-width: 170px;
+    margin-bottom: 24px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    &__title {
+      font-weight: bold;
+      font-size: 32px;
+    }
+
+    &__author {
+      font-weight: 300;
+      font-size: 24px;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 300;
+    font-size: 16px;
+
+    .bold {
+      font-weight: bold;
+    }
+  }
+}

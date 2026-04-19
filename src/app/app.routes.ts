@@ -6,6 +6,8 @@ import { ServerErrorPage } from './server-error-page/server-error-page';
 import { LecturersListPage } from './lecturers-list-page/lecturers-list-page';
 import { lecturerResolver, lecturersResolver } from './core/resolvers/lecturers.resolver';
 import { LecturarePage } from './lecturare-page/lecturare-page';
+import { BooksPage } from './books-page/books-page';
+import { booksResolver, booksTotalResolver } from './core/resolvers/books.resolver';
 
 export const routes: Routes = [
   {
@@ -17,6 +19,15 @@ export const routes: Routes = [
     path: 'about',
     component: AboutPage,
     title: 'ISC | About',
+  },
+  {
+    path: 'library',
+    component: BooksPage,
+    title: 'ISC | Library',
+    resolve: {
+      books: booksResolver,
+      total: booksTotalResolver,
+    },
   },
   {
     path: 'lecturers',

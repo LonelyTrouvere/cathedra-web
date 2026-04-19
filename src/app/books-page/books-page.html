@@ -1,0 +1,64 @@
+<div class="books-page">
+  <h2 class="header">Бібліотека</h2>
+  <div class="books-page__filters">
+    <app-searchbar [form_control]="form.controls.search"></app-searchbar>
+  </div>
+  <div class="books-page__content">
+    <div class="books-page__content__list">
+      @for (book of books(); track book.title) {
+        <app-book-card [book]="book"></app-book-card>
+      }
+    </div>
+    @if (numberOfPages > 1) {
+      <div class="books-page__content__pagination">
+        <button
+          class="books-page__content__pagination__button"
+          (click)="setPage(currentPage - 1)"
+          [disabled]="currentPage === 1"
+        >
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="24" cy="24" r="24" transform="matrix(-1 0 0 1 48 0)" />
+            <path
+              d="M17.742 25.5H36V22.5H17.742L25.788 14.454L23.667 12.333L12 24L23.667 35.667L25.788 33.546L17.742 25.5Z"
+              fill="#F9F9F9"
+            />
+          </svg>
+        </button>
+        @for (number of paginationArray; track number) {
+          <button
+            class="books-page__content__pagination__button"
+            [ngClass]="{ active: number === currentPage }"
+            (click)="setPage(number)"
+          >
+            {{ number }}
+          </button>
+        }
+        <button
+          class="books-page__content__pagination__button"
+          (click)="setPage(currentPage + 1)"
+          [disabled]="currentPage === numberOfPages"
+        >
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 48 48"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="24" cy="24" r="24" />
+            <path
+              d="M30.258 25.5H12V22.5H30.258L22.212 14.454L24.333 12.333L36 24L24.333 35.667L22.212 33.546L30.258 25.5Z"
+              fill="#F9F9F9"
+            />
+          </svg>
+        </button>
+      </div>
+    }
+  </div>
+</div>

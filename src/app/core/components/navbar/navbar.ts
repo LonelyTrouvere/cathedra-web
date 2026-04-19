@@ -25,7 +25,7 @@ const NAV_SECTIONS: NavSection[] = [
   },
   {
     title: 'Бібліотека',
-    url: '/section2',
+    url: '/library',
   },
   {
     title: 'Контакти',
