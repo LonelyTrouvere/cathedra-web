@@ -3,6 +3,7 @@
   [class.hovered]="isHovered"
   (mouseenter)="isHovered = true"
   (mouseleave)="isHovered = false"
+  (click)="click()"
 >
   {{ section().title }}
 </button>
