@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrl: './lecturer-card.scss',
 })
 export class LecturerCard {
-  env = environment;
+  readonly env = environment;
   lecturer = input.required<Lecturer>();
   redirectUrl = input<boolean>(false);
   photoUrl?: string;

@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { LecturersService } from '../services/lecturers.service';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot } from '@angular/router';
 
 export const lecturersResolver = () => {
   const lecturersService = inject(LecturersService);

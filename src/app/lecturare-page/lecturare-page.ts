@@ -13,7 +13,7 @@ import { Link } from "../core/components/link/link";
 })
 export class LecturarePage {
   lecturer: Lecturer;
-  env = environment;
+  readonly env = environment;
   publicationExtended = false;
   historyExtended = false;
 
