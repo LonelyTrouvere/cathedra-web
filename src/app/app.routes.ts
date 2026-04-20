@@ -8,6 +8,7 @@ import { lecturerResolver, lecturersResolver } from './core/resolvers/lecturers.
 import { LecturarePage } from './lecturare-page/lecturare-page';
 import { BooksPage } from './books-page/books-page';
 import { booksResolver, booksTotalResolver } from './core/resolvers/books.resolver';
+import { positionsResolver } from './core/resolvers/positions.resolver';
 
 export const routes: Routes = [
   {
@@ -35,6 +36,7 @@ export const routes: Routes = [
     title: 'ISC | Lecturers',
     resolve: {
       lecturers: lecturersResolver,
+      positions: positionsResolver,
     },
   },
   {

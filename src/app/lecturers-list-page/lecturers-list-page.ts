@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import * as _ from 'lodash';
 import { KeyValuePipe } from '@angular/common';
 import { Divider } from "../core/components/divider/divider";
+import { Position } from '../core/entity/position';
 
 @Component({
   selector: 'app-lecturers-list-page',
@@ -15,12 +16,18 @@ import { Divider } from "../core/components/divider/divider";
   encapsulation: ViewEncapsulation.None,
 })
 export class LecturersListPage {
-  formatedLecturers: Record<string, Lecturer[]>;
+  positions: Position[] = [];
+  formatedLecturers: [string, Lecturer[]][] = [];
 
   constructor(
     protected readonly lecService: LecturersService,
     protected route: ActivatedRoute,
   ) {
-    this.formatedLecturers = _.groupBy(this.route.snapshot.data['lecturers'] || [], 'position');
+    this.positions = this.route.snapshot.data['positions'] || [];
+    const lecturers: Lecturer[] = this.route.snapshot.data['lecturers'];
+    console.log(this.positions);
+    this.positions.forEach(pos => {
+      this.formatedLecturers.push([pos.plural, lecturers.filter(lec => lec.position.id === pos.id)]);
+    });
   }
 }

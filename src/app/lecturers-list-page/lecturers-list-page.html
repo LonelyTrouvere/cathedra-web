@@ -1,18 +1,20 @@
 <div class="lecturers-list">
   <h2 class="lecturers-list__header header">Співробітники кафедри</h2>
   <div class="lecturers-list__blocks">
-    @for (lecturer of formatedLecturers | keyvalue; track lecturer.key) {
-      <div class="lecturers-list__block">
-        <div class="lecturers-list__block__header">
-          <h3 class="lecturers-list__block__title">{{ lecturer.key }}</h3>
-          <app-divider></app-divider>
+    @for (lecturer of formatedLecturers; track lecturer[0]) {
+      @if (lecturer[1]?.length) {
+        <div class="lecturers-list__block">
+          <div class="lecturers-list__block__header">
+            <h3 class="lecturers-list__block__title">{{ lecturer[0] }}</h3>
+            <app-divider></app-divider>
+          </div>
+          <div class="lecturers-list__block__content">
+            @for (item of lecturer[1]; track item.slug) {
+              <app-lecturer-card [lecturer]="item" [redirectUrl]="true"></app-lecturer-card>
+            }
+          </div>
         </div>
-        <div class="lecturers-list__block__content">
-          @for (item of lecturer.value; track item.slug) {
-            <app-lecturer-card [lecturer]="item" [redirectUrl]="true"></app-lecturer-card>
-          }
-        </div>
-      </div>
+      }
     }
   </div>
 </div>

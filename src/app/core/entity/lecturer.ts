@@ -1,8 +1,10 @@
+import { Position, PositionDTO } from "./position";
+
 export interface LecturerDTO {
   name: string;
   surname: string;
   middleName?: string;
-  position: string;
+  position: PositionDTO;
   titles?: string[];
   slug: string;
   photoUrl: string;
@@ -23,7 +25,7 @@ export class Lecturer {
   name: string;
   surname: string;
   middleName?: string;
-  position: string;
+  position: Position;
   titles?: string[];
   slug: string;
   photoUrl: string;
@@ -38,7 +40,7 @@ export class Lecturer {
     this.name = dto.name;
     this.surname = dto.surname;
     this.middleName = dto.middleName;
-    this.position = dto.position;
+    this.position = new Position(dto.position);
     this.titles = dto.titles;
     this.slug = dto.slug;
     this.photoUrl = dto.photoUrl;
