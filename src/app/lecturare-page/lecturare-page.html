@@ -12,7 +12,7 @@
         @if (titles) {
           <p class="lecturare-page__top-section__titles">{{ titles }}</p>
         }
-        @if (lecturer.urls) {
+        @if (lecturer.urls && lecturer.urls.length) {
           <p class="lecturare-page__top-section__urls">
             Посилання:
             @for (url of lecturer.urls; track url.url; let i = $index) {
