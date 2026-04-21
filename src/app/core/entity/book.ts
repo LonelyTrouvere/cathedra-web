@@ -1,10 +1,20 @@
+export interface AuthorsDTO {
+  name?: string;
+  lecturerId?: {
+    name: string;
+    surname: string;
+    middleName?: string;
+    slug: string;
+  } 
+}
+
 export interface BookDTO {
   title: string;
   publisher: string;
   language: string;
   pages: number;
   isbn: string;
-  authors: string[];
+  authors: AuthorsDTO[];
   photoUrl: string;
   year: number;
 }
@@ -15,7 +25,7 @@ export class Book {
   public language: string;
   public pages: number;
   public isbn: string;
-  public authors: string[];
+  public authors: AuthorsDTO[];
   public photoUrl: string;
   public year: number;
 

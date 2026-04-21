@@ -16,8 +16,18 @@
     }
 
     &__author {
+      display: inline;
       font-weight: 300;
       font-size: 24px;
+
+      &.linked {
+        color: #12A1DD;
+        cursor: pointer;
+
+        &:hover {
+          color: #116082;
+        }
+      }
     }
   }
 

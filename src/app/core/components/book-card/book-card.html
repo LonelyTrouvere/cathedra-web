@@ -6,7 +6,17 @@
   />
   <div class="book__header">
     <h3 class="book__header__title">{{ book().title }}</h3>
-    <p class="book__header__author">{{ book().authors.join(', ') }}</p>
+    <div class="boo__heade__authors">
+      @for (author of book().authors; track author; let i = $index) {
+        <p class="book__header__author" [ngClass]="{'linked': author.lecturerId}" (click)="author.lecturerId && navigateToLecturer(author.lecturerId.slug)">
+          @if (author.lecturerId) {
+            {{ author.lecturerId.name }} {{ author.lecturerId.surname[0] }}.@if (i !== book().authors.length - 1) {,}
+          } @else {
+            {{ author.name }}@if (i !== book().authors.length - 1) {,}
+          }
+        </p>
+      }
+    </div>
   </div>
   <div class="book__details">
     <p class="book__details__publisher">

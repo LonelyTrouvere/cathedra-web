@@ -4,13 +4,12 @@ import { Lecturer } from '../core/entity/lecturer';
 import { LecturerCard } from '../core/components/lecturer-card/lecturer-card';
 import { ActivatedRoute } from '@angular/router';
 import * as _ from 'lodash';
-import { KeyValuePipe } from '@angular/common';
 import { Divider } from "../core/components/divider/divider";
 import { Position } from '../core/entity/position';
 
 @Component({
   selector: 'app-lecturers-list-page',
-  imports: [LecturerCard, KeyValuePipe, Divider],
+  imports: [LecturerCard, Divider],
   templateUrl: './lecturers-list-page.html',
   styleUrl: './lecturers-list-page.scss',
   encapsulation: ViewEncapsulation.None,
