@@ -4,7 +4,7 @@ import { AboutPage } from './about-page/about-page';
 import { WrongRoutePage } from './wrong-route-page/wrong-route-page';
 import { ServerErrorPage } from './server-error-page/server-error-page';
 import { LecturersListPage } from './lecturers-list-page/lecturers-list-page';
-import { lecturerResolver, lecturersResolver } from './core/resolvers/lecturers.resolver';
+import { lecturerResolver, activeLecturersResolver } from './core/resolvers/lecturers.resolver';
 import { LecturarePage } from './lecturare-page/lecturare-page';
 import { BooksPage } from './books-page/books-page';
 import { booksResolver, booksTotalResolver } from './core/resolvers/books.resolver';
@@ -35,7 +35,7 @@ export const routes: Routes = [
     component: LecturersListPage,
     title: 'ISC | Lecturers',
     resolve: {
-      lecturers: lecturersResolver,
+      lecturers: activeLecturersResolver,
       positions: positionsResolver,
     },
   },

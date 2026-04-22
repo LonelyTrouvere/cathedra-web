@@ -2,9 +2,9 @@ import { inject } from '@angular/core';
 import { LecturersService } from '../services/lecturers.service';
 import { ActivatedRouteSnapshot } from '@angular/router';
 
-export const lecturersResolver = () => {
+export const activeLecturersResolver = () => {
   const lecturersService = inject(LecturersService);
-  return lecturersService.getActiveLecturers();
+  return lecturersService.getLecturers({ active: true });
 };
 
 export const lecturerResolver = (route: ActivatedRouteSnapshot) => {

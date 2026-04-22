@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { Lecturer } from '../entity/lecturer';
+import { GetLecturersDTO } from '../dto/get-lecturers-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -9,9 +10,14 @@ import { Lecturer } from '../entity/lecturer';
 export class LecturersService {
   constructor(protected http: HttpClient) {}
 
-  getActiveLecturers(): Observable<Lecturer[]> {
+  getLecturers(filters?: GetLecturersDTO): Observable<Lecturer[]> {
+    const params: Record<string, string> = {};
+    if (filters?.active !== undefined) {
+      params['active'] = String(filters.active);
+    }
+
     return this.http
-      .get<Lecturer[]>('/lecturers')
+      .get<Lecturer[]>('/lecturers', { params })
       .pipe(map((lecturers) => lecturers.map((lec) => new Lecturer(lec))));
   }
 
