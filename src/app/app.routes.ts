@@ -9,6 +9,7 @@ import { LecturarePage } from './lecturare-page/lecturare-page';
 import { BooksPage } from './books-page/books-page';
 import { booksResolver, booksTotalResolver } from './core/resolvers/books.resolver';
 import { positionsResolver } from './core/resolvers/positions.resolver';
+import { CathedraHistoryPage } from './cathedra-history-page/cathedra-history-page';
 
 export const routes: Routes = [
   {
@@ -29,6 +30,11 @@ export const routes: Routes = [
       books: booksResolver,
       total: booksTotalResolver,
     },
+  },
+  {
+    path: 'history',
+    component: CathedraHistoryPage,
+    title: 'ISC | History',
   },
   {
     path: 'lecturers',

@@ -7,7 +7,7 @@ const NAV_SECTIONS: NavSection[] = [
     title: 'Про кафедру',
     items: [
       { title: 'Привітання завідувача', url: '/greeting' },
-      { title: 'Історія кафедри', url: '/item2' },
+      { title: 'Історія кафедри', url: '/history' },
       { title: 'Співробітники', url: '/lecturers' },
     ],
   },

@@ -7,7 +7,8 @@ export interface LecturerDTO {
   position: PositionDTO;
   titles?: string[];
   slug: string;
-  photoUrl: string;
+  active: boolean;
+  photoUrl?: string;
   urls?: LecturerUrl[];
   thesisSupervisions?: string[];
   subjects?: string[];
@@ -26,9 +27,10 @@ export class Lecturer {
   surname: string;
   middleName?: string;
   position: Position;
+  active: boolean;
   titles?: string[];
   slug: string;
-  photoUrl: string;
+  photoUrl?: string;
   urls?: LecturerUrl[];
   thesisSupervisions?: string[];
   subjects?: string[];
@@ -42,6 +44,7 @@ export class Lecturer {
     this.middleName = dto.middleName;
     this.position = new Position(dto.position);
     this.titles = dto.titles;
+    this.active = dto.active;
     this.slug = dto.slug;
     this.photoUrl = dto.photoUrl;
     this.urls = dto.urls;

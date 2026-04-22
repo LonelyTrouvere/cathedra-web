@@ -15,6 +15,9 @@ export class LecturersService {
     if (filters?.active !== undefined) {
       params['active'] = String(filters.active);
     }
+    if (filters?.position) {
+      params['position'] = filters.position;
+    }
 
     return this.http
       .get<Lecturer[]>('/lecturers', { params })
