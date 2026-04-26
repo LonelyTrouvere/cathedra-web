@@ -5,6 +5,7 @@ import { NavbarItemDesktop } from '../navbar-item-desktop/navbar-item-desktop';
 const NAV_SECTIONS: NavSection[] = [
   {
     title: 'Про кафедру',
+    url: '/about',
     items: [
       { title: 'Привітання завідувача', url: '/greeting' },
       { title: 'Історія кафедри', url: '/history' },

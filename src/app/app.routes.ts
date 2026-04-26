@@ -10,6 +10,7 @@ import { BooksPage } from './books-page/books-page';
 import { booksResolver, booksTotalResolver } from './core/resolvers/books.resolver';
 import { positionsResolver } from './core/resolvers/positions.resolver';
 import { CathedraHistoryPage } from './cathedra-history-page/cathedra-history-page';
+import { GreetingPage } from './greeting-page/greeting-page';
 
 export const routes: Routes = [
   {
@@ -21,6 +22,11 @@ export const routes: Routes = [
     path: 'about',
     component: AboutPage,
     title: 'ISC | About',
+  },
+  {
+    path: 'greeting',
+    component: GreetingPage,
+    title: 'ISC | Greeting',
   },
   {
     path: 'library',
