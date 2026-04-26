@@ -15,14 +15,14 @@ const NAV_SECTIONS: NavSection[] = [
     title: 'Навчання',
     url: '/section2',
   },
-  {
-    title: 'Абітурієнтам',
-    url: '/section2',
-  },
-  {
-    title: 'Наука',
-    url: '/section2',
-  },
+  // {
+  //   title: 'Абітурієнтам',
+  //   url: '/section2',
+  // },
+  // {
+  //   title: 'Наука',
+  //   url: '/section2',
+  // },
   {
     title: 'Бібліотека',
     url: '/library',
