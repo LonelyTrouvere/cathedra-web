@@ -11,6 +11,7 @@ import { booksResolver, booksTotalResolver } from './core/resolvers/books.resolv
 import { positionsResolver } from './core/resolvers/positions.resolver';
 import { CathedraHistoryPage } from './cathedra-history-page/cathedra-history-page';
 import { GreetingPage } from './greeting-page/greeting-page';
+import { ContactsPage } from './contacts-page/contacts-page';
 
 export const routes: Routes = [
   {
@@ -27,6 +28,11 @@ export const routes: Routes = [
     path: 'greeting',
     component: GreetingPage,
     title: 'ISC | Greeting',
+  },
+  {
+    path: 'contacts',
+    component: ContactsPage,
+    title: 'ISC | Contacts',
   },
   {
     path: 'library',

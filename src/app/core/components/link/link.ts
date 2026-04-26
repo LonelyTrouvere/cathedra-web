@@ -21,6 +21,10 @@ export class Link {
     }
 
     if (this.url()) {
+      if (this.url()!.startsWith('http')) {
+        window.open(this.url()!, '_blank');
+        return;
+      }
       this.router.navigateByUrl(this.url()!);
     }
   }

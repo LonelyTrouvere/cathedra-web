@@ -30,7 +30,7 @@ const NAV_SECTIONS: NavSection[] = [
   },
   {
     title: 'Контакти',
-    url: '/section2',
+    url: '/contacts',
   },
 ];
 
