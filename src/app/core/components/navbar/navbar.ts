@@ -14,7 +14,12 @@ const NAV_SECTIONS: NavSection[] = [
   },
   {
     title: 'Навчання',
-    url: '/section2',
+    url: '/programs',
+    items: [
+      { title: 'Бакалавр', url: '/programs/bachelor' },
+      { title: 'Магістр', url: '/programs/master' },
+      { title: 'Доктор філософії', url: '/programs/doctorate' },
+    ],
   },
   // {
   //   title: 'Абітурієнтам',

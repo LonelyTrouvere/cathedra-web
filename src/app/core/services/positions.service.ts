@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { Lecturer } from '../entity/lecturer';
 import { Position, PositionDTO } from '../entity/position';
 
 @Injectable({

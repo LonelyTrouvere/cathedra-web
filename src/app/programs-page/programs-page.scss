@@ -1,0 +1,27 @@
+.programs-page {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+
+  &__programs {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__program {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__header {
+      font-weight: 500;
+      font-size: 32px;
+    }
+
+    &__item {
+      font-weight: 300;
+      font-size: 24px;
+    }
+  }
+}

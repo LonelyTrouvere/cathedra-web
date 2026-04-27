@@ -1,0 +1,56 @@
+<div class="program-page">
+  <h2 class="header">{{ programName[degree] }}</h2>
+  <section class="program-page__section">
+    <h3 class="program-page__section__header">Загальна інформація</h3>
+    <p class="program-page__section__item">{{ programDescription[degree] }}</p>
+  </section>
+  @if (curriculums.length > 0) {
+    <app-divider></app-divider>
+    <section class="program-page__section">
+      <h3 class="program-page__section__header">Описи освітньої програми</h3>
+      <p class="program-page__section__item">
+        Описи освітньої програми <span class="bold">Програмна інженерія</span>:
+      </p>
+      <ul class="program-page__section__item">
+        @for (program of curriculums; track program.id) {
+          <li>
+            <a [href]="`${env.apiUrl}/${program.documentUrl}`">{{ program.name }}</a>
+          </li>
+        }
+      </ul>
+    </section>
+  }
+  @if (syllabuses.length > 0) {
+    <app-divider></app-divider>
+    <section class="program-page__section">
+      <h3 class="program-page__section__header">Навчальні плани</h3>
+      <p class="program-page__section__item">
+        Навчальні плани освітньої програми <span class="bold">Програмна інженерія</span>:
+      </p>
+      <ul class="program-page__section__item">
+        @for (program of syllabuses; track program.id) {
+          <li>
+            <a [href]="`${env.apiUrl}/${program.documentUrl}`">{{ program.name }}</a>
+          </li>
+        }
+      </ul>
+    </section>
+  }
+  @if (programsList.length > 0) {
+    <app-divider></app-divider>
+    <section class="program-page__section">
+      <h3 class="program-page__section__header">Програми навчальних дисциплін</h3>
+      <p class="program-page__section__item">
+        Програми навчальних дисциплін освітньої програми
+        <span class="bold">Програмна інженерія</span>:
+      </p>
+      <ul class="program-page__section__item">
+        @for (program of programsList; track program.id) {
+          <li>
+            <a [href]="`${env.apiUrl}/${program.documentUrl}`">{{ program.name }}</a>
+          </li>
+        }
+      </ul>
+    </section>
+  }
+</div>

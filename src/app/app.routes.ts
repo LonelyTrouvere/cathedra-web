@@ -12,6 +12,8 @@ import { positionsResolver } from './core/resolvers/positions.resolver';
 import { CathedraHistoryPage } from './cathedra-history-page/cathedra-history-page';
 import { GreetingPage } from './greeting-page/greeting-page';
 import { ContactsPage } from './contacts-page/contacts-page';
+import { ProgramsPage } from './programs-page/programs-page';
+import { ProgramPage } from './program-page/program-page';
 
 export const routes: Routes = [
   {
@@ -33,6 +35,16 @@ export const routes: Routes = [
     path: 'contacts',
     component: ContactsPage,
     title: 'ISC | Contacts',
+  },
+  {
+    path: 'programs',
+    component: ProgramsPage,
+    title: 'ISC | Programs',
+  },
+  {
+    path: 'programs/:degree',
+    component: ProgramPage,
+    title: 'ISC | Programs',
   },
   {
     path: 'library',
