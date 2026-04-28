@@ -14,6 +14,8 @@ import { GreetingPage } from './greeting-page/greeting-page';
 import { ContactsPage } from './contacts-page/contacts-page';
 import { ProgramsPage } from './programs-page/programs-page';
 import { ProgramPage } from './program-page/program-page';
+import { QualificationsPage } from './qualifications-page/qualifications-page';
+import { qualificationsResolver } from './core/resolvers/qualification.resolver';
 
 export const routes: Routes = [
   {
@@ -76,6 +78,14 @@ export const routes: Routes = [
     resolve: {
       lecturer: lecturerResolver,
     },
+  },
+  {
+    path: 'qualifications',
+    component: QualificationsPage,
+    title: 'ISC | Qualifications',
+    resolve: {
+        qualifications: qualificationsResolver
+    }
   },
   {
     path: 'server-error',

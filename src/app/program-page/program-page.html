@@ -59,7 +59,12 @@
       <h3 class="program-page__section__header">Випускні кваліфікаційні роботи студентів</h3>
       <ul class="program-page__section__item">
         @for (qual of qualificationYears; track qual.startYear) {
-          <li>{{ qual.startYear }} - {{ qual.endYear }} навчальний рік</li>
+          <li>
+            <a
+              [href]="`/qualifications?degree=${degree}&startYear=${qual.startYear}&endYear=${qual.endYear}`"
+              >{{ qual.startYear }} - {{ qual.endYear }} навчальний рік</a
+            >
+          </li>
         }
       </ul>
     </section>
