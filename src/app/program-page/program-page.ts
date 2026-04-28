@@ -10,6 +10,8 @@ import {
 } from '../core/entity/program';
 import { Divider } from "../core/components/divider/divider";
 import { environment } from '../../environments/environment';
+import { QualificationsService } from '../core/services/qualifications.service';
+import { GetYearsDTO } from '../core/dto/get-years-dto';
 
 @Component({
   selector: 'app-program-page',
@@ -24,6 +26,8 @@ export class ProgramPage {
   syllabuses: Program[] = [];
   programsList: Program[] = [];
 
+  qualificationYears: GetYearsDTO[] = [];
+
   degree: ProgramDegree;
   programDocumentType = ProgramDocumentType;
   programName = ProgramDegreeNameViewObject;
@@ -32,6 +36,7 @@ export class ProgramPage {
   constructor(
     protected route: ActivatedRoute,
     protected programsService: ProgramsService,
+    protected qualificationsService: QualificationsService,
     protected cdr: ChangeDetectorRef
   ) {
     this.degree = route.snapshot.params['degree'];
@@ -39,6 +44,11 @@ export class ProgramPage {
       this.curriculums = programs.filter((p) => p.documentType === ProgramDocumentType.CURRICULUM);
       this.syllabuses = programs.filter((p) => p.documentType === ProgramDocumentType.SYLLABUS);
       this.programsList = programs.filter((p) => p.documentType === ProgramDocumentType.PROGRAM);
+      this.cdr.markForCheck();
+    });
+
+    this.qualificationsService.getQualificationYears(this.degree).subscribe((years) => {
+      this.qualificationYears = years;
       this.cdr.markForCheck();
     });
   }

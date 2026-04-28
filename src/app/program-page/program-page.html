@@ -53,4 +53,15 @@
       </ul>
     </section>
   }
+  @if (qualificationYears.length > 0) {
+    <app-divider></app-divider>
+    <section class="program-page__section">
+      <h3 class="program-page__section__header">Випускні кваліфікаційні роботи студентів</h3>
+      <ul class="program-page__section__item">
+        @for (qual of qualificationYears; track qual.startYear) {
+          <li>{{ qual.startYear }} - {{ qual.endYear }} навчальний рік</li>
+        }
+      </ul>
+    </section>
+  }
 </div>
