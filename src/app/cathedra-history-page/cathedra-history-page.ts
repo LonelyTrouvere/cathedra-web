@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Lecturer } from '../core/entity/lecturer';
-import { Position } from '../core/entity/position';
+import { Lecturer, Positions } from '../core/entity/lecturer';
 import { LecturerCard } from '../core/components/lecturer-card/lecturer-card';
 import { Link } from '../core/components/link/link';
 
@@ -20,19 +19,12 @@ export class CathedraHistoryPage {
   provotarFull = false;
 
   constructor() {
-    const position: Position = new Position({
-      id: '',
-      name: 'Завідувач',
-      plural: 'Завідувачі',
-      sortNumber: 1,
-    });
-
     this.popov = new Lecturer({
       surname: 'Попов',
       name: 'Юрій',
       middleName: 'Дмитрович',
       photoUrl: 'assets/popov.jpg',
-      position: position,
+      position: Positions.DEPARTMENT_HEAD,
       slug: 'popov',
       active: false,
       titles: ['Завідувач кафедри ІС, доктор технічних нау', 'професор'],
@@ -41,7 +33,7 @@ export class CathedraHistoryPage {
       surname: 'Бублик',
       name: 'Володимир',
       middleName: 'Васильович',
-      position: position,
+      position: Positions.DEPARTMENT_HEAD,
       slug: 'bublyk',
       active: false,
       photoUrl: 'assets/bublyk.jpg',
@@ -51,7 +43,7 @@ export class CathedraHistoryPage {
       surname: 'Провотер',
       name: 'Олександр',
       middleName: 'Іванович',
-      position: position,
+      position: Positions.DEPARTMENT_HEAD,
       slug: 'provoter',
       active: false,
       photoUrl: 'assets/provotar.jpg',

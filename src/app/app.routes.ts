@@ -8,7 +8,6 @@ import { lecturerResolver, activeLecturersResolver } from './core/resolvers/lect
 import { LecturarePage } from './lecturare-page/lecturare-page';
 import { BooksPage } from './books-page/books-page';
 import { booksResolver, booksTotalResolver } from './core/resolvers/books.resolver';
-import { positionsResolver } from './core/resolvers/positions.resolver';
 import { CathedraHistoryPage } from './cathedra-history-page/cathedra-history-page';
 import { GreetingPage } from './greeting-page/greeting-page';
 import { ContactsPage } from './contacts-page/contacts-page';
@@ -68,7 +67,6 @@ export const routes: Routes = [
     title: 'ISC | Lecturers',
     resolve: {
       lecturers: activeLecturersResolver,
-      positions: positionsResolver,
     },
   },
   {

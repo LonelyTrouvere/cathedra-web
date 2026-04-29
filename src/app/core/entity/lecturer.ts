@@ -1,10 +1,18 @@
-import { Position, PositionDTO } from "./position";
+export enum Positions {
+  DEPARTMENT_HEAD = 'department_head',
+  DOCENT = 'docent',
+  ASSISTANT = 'assistant',
+  PROFESSOR = 'professor',
+  ENGINEER = 'engineer',
+  STAFF = 'staff',
+}
+
 
 export interface LecturerDTO {
   name: string;
   surname: string;
   middleName?: string;
-  position: PositionDTO;
+  position: Positions;
   titles?: string[];
   slug: string;
   active: boolean;
@@ -26,7 +34,7 @@ export class Lecturer {
   name: string;
   surname: string;
   middleName?: string;
-  position: Position;
+  position: Positions;
   active: boolean;
   titles?: string[];
   slug: string;
@@ -42,7 +50,7 @@ export class Lecturer {
     this.name = dto.name;
     this.surname = dto.surname;
     this.middleName = dto.middleName;
-    this.position = new Position(dto.position);
+    this.position = dto.position;
     this.titles = dto.titles;
     this.active = dto.active;
     this.slug = dto.slug;
