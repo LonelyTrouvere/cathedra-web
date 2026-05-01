@@ -9,7 +9,7 @@
 
   &__img {
     max-width: 170px;
-    max-height: 260px;
+    min-height: 260px;
     border-radius: 12px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
   }
