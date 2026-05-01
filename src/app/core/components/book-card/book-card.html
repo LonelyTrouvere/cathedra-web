@@ -3,16 +3,18 @@
     [src]="`${env.apiUrl}/${book().photoUrl}`"
     alt="Обкладинка книги {{ book().title }}"
     class="book__cover-image"
+    (click)="navigateToDoc()"
+    [style]="{ cursor: book().docUrl ? 'pointer' : 'auto' }"
   />
   <div class="book__header">
     <h3 class="book__header__title">{{ book().title }}</h3>
     <div class="boo__heade__authors">
-      @for (author of book().authors; track author; let i = $index) {
+      @for (author of authors; track author; let i = $index) {
         <p class="book__header__author" [ngClass]="{'linked': author.lecturerId}" (click)="author.lecturerId && navigateToLecturer(author.lecturerId.slug)">
           @if (author.lecturerId) {
-            {{ author.lecturerId.name }} {{ author.lecturerId.surname[0] }}.@if (i !== book().authors.length - 1) {,}
+            {{ author.lecturerId.name }} {{ author.lecturerId.surname[0] }}.@if (i !== authors.length - 1) {,}
           } @else {
-            {{ author.name }}@if (i !== book().authors.length - 1) {,}
+            {{ author.name }}@if (i !== authors.length - 1) {,}
           }
         </p>
       }

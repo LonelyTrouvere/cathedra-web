@@ -20,4 +20,13 @@ export class BookCard {
     if (!author) return;
     this.router.navigate(['/lecturers', author]);
   }
+
+  navigateToDoc() {
+    if (!this.book().docUrl) return;
+    window.open(`${this.env.apiUrl}/${this.book().docUrl}`, '_blank');
+  }
+
+  get authors() {
+    return this.book().authors.filter((a) => a.lecturerId || a.name);
+  }
 }

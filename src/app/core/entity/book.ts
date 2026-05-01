@@ -15,7 +15,8 @@ export interface BookDTO {
   pages: number;
   isbn: string;
   authors: AuthorsDTO[];
-  photoUrl: string;
+  photoUrl?: string;
+  documentUrl?: string;
   year: number;
 }
 
@@ -26,7 +27,8 @@ export class Book {
   public pages: number;
   public isbn: string;
   public authors: AuthorsDTO[];
-  public photoUrl: string;
+  public photoUrl?: string;
+  public docUrl?: string;
   public year: number;
 
   constructor(data: BookDTO) {
@@ -37,6 +39,7 @@ export class Book {
     this.isbn = data.isbn;
     this.authors = data.authors;
     this.photoUrl = data.photoUrl;
+    this.docUrl = data.documentUrl;
     this.year = data.year;
   }
 }
