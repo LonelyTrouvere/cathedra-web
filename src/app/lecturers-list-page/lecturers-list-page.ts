@@ -16,12 +16,21 @@ import { Divider } from '../core/components/divider/divider';
 export class LecturersListPage {
   formatedLecturers: [Positions, Lecturer[]][] = [];
   pluralMap = {
-    [Positions.DEPARTMENT_HEAD]: 'Завідувачі',
+    [Positions.DEPARTMENT_HEAD]: 'Завідувач',
     [Positions.PROFESSOR]: 'Професори',
     [Positions.DOCENT]: 'Доценти',
     [Positions.ASSISTANT]: 'Асистенти',
     [Positions.ENGINEER]: 'Інженери',
     [Positions.STAFF]: 'Співробітники',
+  };
+
+  positionsSortOrder = {
+    [Positions.DEPARTMENT_HEAD]: 0,
+    [Positions.PROFESSOR]: 1,
+    [Positions.DOCENT]: 2,
+    [Positions.ASSISTANT]: 3,
+    [Positions.ENGINEER]: 4,
+    [Positions.STAFF]: 5,
   };
 
   constructor(
@@ -33,5 +42,8 @@ export class LecturersListPage {
       Positions,
       Lecturer[],
     ][];
+    this.formatedLecturers.sort(
+      ([posA], [posB]) => this.positionsSortOrder[posA] - this.positionsSortOrder[posB],
+    );
   }
 }
