@@ -21,7 +21,7 @@
       font-size: var(--text-md-size);
 
       &.linked {
-        color: #12A1DD;
+        color: #12a1dd;
         cursor: pointer;
 
         &:hover {
@@ -40,6 +40,23 @@
 
     .bold {
       font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .book {
+    &__cover-image {
+      margin-bottom: 12px;
+    }
+
+    &__header {
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    &__details {
+      gap: 2px;
     }
   }
 }
