@@ -9,7 +9,7 @@
     gap: 16px;
 
     &__header {
-      font-size: 32px;
+      font-size: var(--text-lg-size);
       font-weight: 500;
     }
 
@@ -26,7 +26,7 @@
     td {
       padding: 16px 8px;
       text-align: left;
-      font-size: 24px;
+      font-size: var(--text-md-size);
       font-weight: 300;
 
       p.linked {

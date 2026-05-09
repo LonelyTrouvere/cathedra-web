@@ -10,7 +10,7 @@
 
     &__description {
       font-weight: 300;
-      font-size: 24px;
+      font-size: var(--text-md-size);
     }
 
     &__count {
@@ -26,13 +26,13 @@
 
       &__number {
         font-weight: 500;
-        font-size: 76px;
+        font-size: var(--text-4xl-size);
         color: #12a1dd;
       }
 
       &__label {
         font-weight: 500;
-        font-size: 48px;
+        font-size: var(--text-xl-size);
       }
     }
   }
@@ -49,7 +49,7 @@
 
       &__description {
         font-weight: 300;
-        font-size: 32px;
+        font-size: var(--text-lg-size);
       }
 
       &__table {
@@ -70,13 +70,13 @@
 
         &__name {
           font-weight: 500;
-          font-size: 32px;
+          font-size: var(--text-lg-size);
           margin-bottom: 16px;
         }
 
         &__description {
           font-weight: 300;
-          font-size: 24px;
+          font-size: var(--text-md-size);
         }
 
         ul {
@@ -89,13 +89,13 @@
   &__students {
     &__header {
       font-weight: 500;
-      font-size: 48px;
+      font-size: var(--text-xl-size);
       margin-bottom: 32px;
     }
 
     &__subheader {
       font-weight: 500;
-      font-size: 32px;
+      font-size: var(--text-lg-size);
       margin-bottom: 24px;
     }
 
@@ -107,7 +107,7 @@
 
     &__item {
       font-weight: 300;
-      font-size: 24px;
+      font-size: var(--text-md-size);
     }
   }
 
@@ -120,7 +120,7 @@
       h3 {
         width: 50%;
         font-weight: 500;
-        font-size: 32px;
+        font-size: var(--text-lg-size);
       }
 
       img {
@@ -130,12 +130,12 @@
 
     &__more {
       font-weight: bold;
-      font-size: 24px;
+      font-size: var(--text-md-size);
     }
 
     &__invite {
       font-weight: 300;
-      font-size: 24px;
+      font-size: var(--text-md-size);
       margin-bottom: 16px;
     }
   }

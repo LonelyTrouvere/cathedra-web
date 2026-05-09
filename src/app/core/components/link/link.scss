@@ -6,7 +6,7 @@
   border: none;
 
   &__text {
-    font-size: 24px;
+    font-size: var(--text-md-size);
     font-weight: bold;
     color: black;
   }

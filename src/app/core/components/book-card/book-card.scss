@@ -12,13 +12,13 @@
 
     &__title {
       font-weight: bold;
-      font-size: 32px;
+      font-size: var(--text-lg-size);
     }
 
     &__author {
       display: inline;
       font-weight: 300;
-      font-size: 24px;
+      font-size: var(--text-md-size);
 
       &.linked {
         color: #12A1DD;
@@ -36,7 +36,7 @@
     flex-direction: column;
     gap: 8px;
     font-weight: 300;
-    font-size: 16px;
+    font-size: var(--text-sm-size);
 
     .bold {
       font-weight: bold;

@@ -1,6 +1,8 @@
 body {
   font-family: 'Inter', sans-serif;
   margin: unset;
+  font-size: var(--text-body-size);
+  line-height: 1.5;
 
   h1, h2, h3, h4, h5, h6, p, ul, ol {
     margin: unset;
@@ -11,33 +13,43 @@ body {
   }
 }
 
-:root{
+:root {
   --app-padding: 5vw;
+  /* Typography scale: responsive font sizes maintaining hierarchy across 360px-1440px */
+  --text-xs-size: clamp(12px, calc(11.333px + 0.185vw), 14px);
+  --text-sm-size: clamp(14px, calc(13.333px + 0.185vw), 16px);
+  --text-body-size: clamp(14px, calc(13.333px + 0.185vw), 16px);
+  --text-md-size: clamp(20px, calc(18.667px + 0.370vw), 24px);
+  --text-lg-size: clamp(24px, calc(21.333px + 0.741vw), 32px);
+  --text-xl-size: clamp(32px, calc(28px + 1.111vw), 48px);
+  --text-2xl-size: clamp(36px, calc(30.667px + 1.481vw), 52px);
+  --text-3xl-size: clamp(44px, calc(37.333px + 1.852vw), 64px);
+  --text-4xl-size: clamp(48px, calc(40.667px + 2.593vw), 76px);
 }
 
 .small-text {
-  font-size: 300;
-  font-size: 16px;
+  font-size: var(--text-sm-size);
+  line-height: 1.4;
 }
 
 .xsmall-text {
-  font-size: 300;
-  font-size: 14px;
+  font-size: var(--text-xs-size);
+  line-height: 1.35;
 }
 
 .semi-header {
   margin: unset;
   padding: unset;
-  font-size: 500;
-  font-size: 26px;
+  font-size: var(--text-md-size);
+  line-height: 1.2;
   color: #606B70;
 }
 
 .header {
   margin: unset;
   padding: unset;
-  font-size: 700;
-  font-size: 52px;
+  font-size: var(--text-2xl-size);
+  line-height: 1.1;
 }
 
 .bold {

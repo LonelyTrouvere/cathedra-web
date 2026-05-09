@@ -10,7 +10,7 @@
   cursor: pointer;
   height: 100%;
   font-weight: 300;
-  font-size: 22px;
+  font-size: var(--text-lg-size);
   font-family: 'Inter', sans-serif;
 
   &.hovered {
@@ -34,7 +34,7 @@
     word-break: none;
     color: black;
     font-weight: 300;
-    font-size: 18px;
+    font-size: var(--text-sm-size);
     font-family: 'Inter', sans-serif;
 
     &:hover {

@@ -41,7 +41,7 @@
 
     app-link {
       .arrow-link__text {
-        font-size: 16px;
+        font-size: var(--text-sm-size);
       }
     }
   }
