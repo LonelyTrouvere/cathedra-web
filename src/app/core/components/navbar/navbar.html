@@ -11,5 +11,48 @@
     <div class="navbar__languages-wrapper">
       <app-navbar-item-desktop [section]="languages"></app-navbar-item-desktop>
     </div>
+    <button class="navbar__burger" (click)="toggleBurgerMenu()">
+      <img
+        class="navbar__burger__icon"
+        src="icons/burger-menu.svg"
+        alt="burger menu icon"
+        [height]="36"
+        [width]="36"
+      />
+    </button>
   </div>
+</nav>
+<div (click)="toggleBurgerMenu()" class="burger-menu-overlay" [ngClass]="{ 'burger-menu-overlay--open': burgerMenuOpen }"></div>
+<nav [ngClass]="{ 'burger-menu--open': burgerMenuOpen }" class="burger-menu">
+  <button class="burger-menu__close" (click)="toggleBurgerMenu()">
+    <img
+      class="burger-menu__close__icon"
+      src="icons/burger-close.svg"
+      alt="close icon"
+      [height]="36"
+      [width]="36"
+    />
+  </button>
+  @for (link of sections; track link.title) {
+    <app-link
+      [text]="link.title"
+      [clickable]="
+        !link.items || link.items.length <= 0
+          ? redirect.bind(this, link.url!)
+          : activateSection.bind(this, link.title)
+      "
+    ></app-link>
+    @if (link.items && link.items.length > 0 && currentlyActiveSection === link.title) {
+      <div class="burger-menu__subitems">
+        <button class="burger-menu__subitem" (click)="redirect(link.url!)">
+          {{ link.title }}
+        </button>
+        @for (item of link.items; track item.title) {
+          <button class="burger-menu__subitem" (click)="redirect(item.url!)">
+            {{ item.title }}
+          </button>
+        }
+      </div>
+    }
+  }
 </nav>

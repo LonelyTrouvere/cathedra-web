@@ -5,7 +5,7 @@
   </div>
   <div class="books-page__content">
     <div class="books-page__content__list">
-      @for (book of books(); track book.title) {
+      @for (book of books(); track book.isbn) {
         <app-book-card [book]="book"></app-book-card>
       }
     </div>

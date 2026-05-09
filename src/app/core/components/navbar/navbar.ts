@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { NavSection } from '../../entity/navsection';
 import { NavbarItemDesktop } from '../navbar-item-desktop/navbar-item-desktop';
+import { NgClass } from '@angular/common';
+import { Link } from "../link/link";
+import { Router } from '@angular/router';
 
 const NAV_SECTIONS: NavSection[] = [
   {
@@ -49,11 +52,36 @@ const NAV_LANGUAGES: NavSection = {
 };
 @Component({
   selector: 'app-navbar',
-  imports: [NavbarItemDesktop],
+  imports: [NavbarItemDesktop, NgClass, Link],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class Navbar {
   sections = NAV_SECTIONS;
   languages = NAV_LANGUAGES;
+  currentlyActiveSection: string | null = null;
+
+  burgerMenuOpen = false;
+
+  constructor(protected router: Router) {}
+
+  toggleBurgerMenu() {
+    this.burgerMenuOpen = !this.burgerMenuOpen;
+  }
+
+  redirect(url: string) {
+    this.burgerMenuOpen = false;
+    this.currentlyActiveSection = null;
+    this.router.navigate([url]);
+  }
+
+  activateSection(sectionTitle: string) {
+    if (this.currentlyActiveSection === sectionTitle) {
+      this.currentlyActiveSection = null;
+      return;
+    }
+
+    this.currentlyActiveSection = sectionTitle;
+  }
 }
