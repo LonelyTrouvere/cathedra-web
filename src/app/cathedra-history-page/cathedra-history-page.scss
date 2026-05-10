@@ -1,7 +1,7 @@
 .history-page {
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
 
   &__section {
     &__header {
@@ -26,6 +26,16 @@
       float: left;
       margin: 20px;
       margin-left: unset;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .history-page {
+    &__section {
+      app-lecturer-card {
+        float: unset;
+      }
     }
   }
 }
