@@ -14,15 +14,28 @@
     }
 
     &__count {
-      display: flex;
+      display: grid;
+      gap: 0 40px;
+      grid-template-areas: 'professors docents assistants';
       justify-content: space-between;
-      width: 80%;
     }
 
     .prof-count {
       display: flex;
       flex-direction: column;
       align-items: start;
+
+      &--professors {
+        grid-area: professors;
+      }
+
+      &--docents {
+        grid-area: docents;
+      }
+
+      &--assistants {
+        grid-area: assistants;
+      }
 
       &__number {
         font-weight: 500;
@@ -125,6 +138,7 @@
 
       img {
         max-height: 238px;
+        max-width: 472px;
       }
     }
 
@@ -142,5 +156,77 @@
 
   .blue {
     color: #12a1dd;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about-page {
+    gap: 32px;
+
+    &__header,
+    &__programs {
+      gap: 16px;
+    }
+
+    &__companies {
+      &__content {
+        flex-direction: column;
+        gap: 16px;
+
+        h3 {
+          width: 100%;
+        }
+
+        img {
+          width: auto;
+          align-self: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .about-page {
+    &__companies {
+      &__content {
+        flex-direction: column;
+        gap: 16px;
+
+        h3 {
+          width: 100%;
+        }
+
+        img {
+          align-self: unset;
+        }
+      }
+    }
+
+    &__header {
+      &__count {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas: 'professors docents' 'assistants assistants';
+      }
+    }
+
+    &__programs {
+      .program-short {
+        &__table {
+          td {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            border-right: unset;
+          }
+
+          td:first-child {
+            border-right: unset;
+            border-bottom: 2px solid #12a1dd;
+            border-bottom-left-radius: unset;
+          }
+        }
+      }
+    }
   }
 }
