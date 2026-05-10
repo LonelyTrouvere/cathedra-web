@@ -130,6 +130,8 @@
 
 @media screen and (max-width: 576px) {
   .navbar {
+    box-shadow: 0 10px 110px -18px rgba(0, 0, 0, 0.35);
+
     &__items-wrapper {
       display: none;
     }

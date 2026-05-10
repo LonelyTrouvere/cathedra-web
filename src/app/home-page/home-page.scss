@@ -126,3 +126,62 @@
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .home-page {
+    &__about {
+      flex-direction: column;
+      gap: 16px;
+      justify-content: start;
+      text-align: left;
+
+      &__text {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .home-page {
+    &__main {
+      &__headers {
+        h1 {
+          font-size: var(--text-2xl-size);
+        }
+
+        h4 {
+          font-size: var(--text-sm-size);
+        }
+
+        h3 {
+          font-size: var(--text-md-size);
+        }
+      }
+
+      &__more {
+        img {
+          display: none;
+        }
+      }
+    }
+
+    &__about {
+      flex-direction: column;
+      justify-content: start;
+      text-align: left;
+      gap: 16px;
+
+      &__text {
+        max-width: 100%;
+      }
+    }
+
+    &__programs {
+      &__program {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  }
+}
