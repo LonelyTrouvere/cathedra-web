@@ -15,4 +15,9 @@ export const lecturerResolver = (route: ActivatedRouteSnapshot) => {
 
   const lecturersService = inject(LecturersService);
   return lecturersService.getLecturerBySlug(slug);
-}
+};
+
+export const lecturersByDepartmentResolver = () => {
+  const lecturersService = inject(LecturersService);
+  return lecturersService.getLecturersByDepartment();
+};

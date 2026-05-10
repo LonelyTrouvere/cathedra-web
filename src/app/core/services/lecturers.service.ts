@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { Lecturer } from '../entity/lecturer';
 import { GetLecturersDTO } from '../dto/get-lecturers-dto';
+import { LecturersByDepartmentStat } from '../entity/dto/lecturers-by-department';
 
 @Injectable({
   providedIn: 'root',
@@ -26,5 +27,9 @@ export class LecturersService {
 
   getLecturerBySlug(slug: string): Observable<Lecturer> {
     return this.http.get<Lecturer>(`/lecturers/${slug}`).pipe(map((lec) => new Lecturer(lec)));
+  }
+
+  getLecturersByDepartment(): Observable<LecturersByDepartmentStat> {
+    return this.http.get<LecturersByDepartmentStat>('/lecturers/stats/by-position');
   }
 }
