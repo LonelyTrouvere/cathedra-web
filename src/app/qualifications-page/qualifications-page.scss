@@ -13,7 +13,14 @@
       font-weight: 500;
     }
 
+    &__table-wrapper {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
     table {
+      width: 100%;
+      table-layout: auto;
       border-collapse: collapse;
     }
 
@@ -36,6 +43,52 @@
         &:hover {
           color: #116082;
         }
+      }
+    }
+
+    td:nth-child(2) > *,
+    td:nth-child(3) > *,
+    td:nth-child(4) > * {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .qualifications-page {
+    &__section {
+      &__header {
+        font-size: var(--text-md-size);
+      }
+
+      &__table-wrapper {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      table {
+        width: max-content;
+        table-layout: fixed;
+      }
+
+      th,
+      td {
+        white-space: normal;
+      }
+
+      td:nth-child(2) > *,
+      td:nth-child(3) > *,
+      td:nth-child(4) > * {
+        overflow: visible;
+        text-overflow: unset;
+        white-space: normal;
+      }
+
+      &__header {
+        margin-bottom: 8px;
       }
     }
   }

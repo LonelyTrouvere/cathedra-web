@@ -8,42 +8,44 @@
         }}
         н.р
       </h3>
-      <table>
-        <thead>
-          <tr>
-            <th>№</th>
-            <th>П.І.Б. студента</th>
-            <th>Тема роботи</th>
-            <th>Науковий керівник</th>
-          </tr>
-        </thead>
-        <tbody>
-          @for (qual of quals.value; track qual.id; let i = $index) {
+      <div class="qualifications-page__section__table-wrapper">
+        <table>
+          <thead>
             <tr>
-              <td>{{ i + 1 }}</td>
-              <td>{{ qual.studentName }}</td>
-              <td>{{ qual.qualificationName }}</td>
-              <td>
-                <p
-                  [ngClass]="{ linked: qual.supervisor.lecturerId }"
-                  (click)="
-                    qual.supervisor.lecturerId &&
-                      navigateToLecturer(qual.supervisor.lecturerId.slug)
-                  "
-                >
-                  @if (qual.supervisor.lecturerId) {
-                    {{ qual.supervisor.lecturerId.name }}
-                    {{ qual.supervisor.lecturerId.surname[0] }}.
-                    {{ qual.supervisor.lecturerId.middleName?.[0] }}.
-                  } @else {
-                    {{ qual.supervisor.name }}
-                  }
-                </p>
-              </td>
+              <th>№</th>
+              <th>П.І.Б. студента</th>
+              <th>Тема роботи</th>
+              <th>Науковий керівник</th>
             </tr>
-          }
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            @for (qual of quals.value; track qual.id; let i = $index) {
+              <tr>
+                <td>{{ i + 1 }}</td>
+                <td>{{ qual.studentName }}</td>
+                <td>{{ qual.qualificationName }}</td>
+                <td>
+                  <p
+                    [ngClass]="{ linked: qual.supervisor.lecturerId }"
+                    (click)="
+                      qual.supervisor.lecturerId &&
+                        navigateToLecturer(qual.supervisor.lecturerId.slug)
+                    "
+                  >
+                    @if (qual.supervisor.lecturerId) {
+                      {{ qual.supervisor.lecturerId.name }}
+                      {{ qual.supervisor.lecturerId.surname[0] }}.
+                      {{ qual.supervisor.lecturerId.middleName?.[0] }}.
+                    } @else {
+                      {{ qual.supervisor.name }}
+                    }
+                  </p>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
     </section>
   }
 </div>
