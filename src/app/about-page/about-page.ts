@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Positions } from '../core/entity/lecturer';
+import { WordFormPipe } from '../core/utils/word-form.pipe';
 
 @Component({
   selector: 'app-about-page',
-  imports: [],
+  imports: [WordFormPipe],
   templateUrl: './about-page.html',
   styleUrl: './about-page.scss',
 })

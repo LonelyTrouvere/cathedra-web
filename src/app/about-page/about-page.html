@@ -12,15 +12,24 @@
         <span class="prof-count__number">{{
           stats[positions.PROFESSOR] + stats[positions.DEPARTMENT_HEAD]
         }}</span>
-        <span class="prof-count__label">Професори</span>
+        <span class="prof-count__label">
+          {{
+            stats[positions.PROFESSOR] + stats[positions.DEPARTMENT_HEAD]
+              | wordForm : 'Професор' : 'Професори' : 'Професорів'
+          }}
+        </span>
       </div>
       <div class="prof-count prof-count--docents">
         <span class="prof-count__number">{{ stats[positions.DOCENT] }}</span>
-        <span class="prof-count__label">Доцентів</span>
+        <span class="prof-count__label">
+          {{ stats[positions.DOCENT] | wordForm : 'Доцент' : 'Доценти' : 'Доцентів' }}
+        </span>
       </div>
       <div class="prof-count prof-count--assistants">
         <span class="prof-count__number">{{ stats[positions.ASSISTANT] }}</span>
-        <span class="prof-count__label">Асистентів</span>
+        <span class="prof-count__label">
+          {{ stats[positions.ASSISTANT] | wordForm : 'Асистент' : 'Асистенти' : 'Асистентів' }}
+        </span>
       </div>
     </div>
   </section>
